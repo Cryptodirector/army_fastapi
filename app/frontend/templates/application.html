@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="http://127.0.0.1:8000/application" method="post">
+        <div class="form-container">
+            <label for="name">Имя: </label><br>
+            <input type="text" name="name" id="name"><br>
+
+            <label for="number">Номер телефона: </label><br>
+            <input type="text" name="number" id="number"><br>
+
+            <label for="education">Образование: </label><br>
+            <input type="text" name="education" id="education"><br>
+
+            <label for="city">Город: </label><br>
+            <input type="text" name="city" id="city"><br>
+
+
+            <legend>Была ли у вас срочная служба?</legend>
+            <label><input type="radio" name="emergency_service" value="True" /> Да</label>
+            <label><input type="radio" name="emergency_service" value="False" /> Нет</label>
+            <button type="submit" class="submit-button">Отправить</button>
+        </div>
+
+    </form>
+
+{% endblock %}

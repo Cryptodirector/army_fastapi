@@ -1,0 +1,311 @@
+/* style.css */
+
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px; /* Отступ, чтобы контент не перекрывал шапку */
+}
+
+/* Стили для header */
+header {
+    width: 100%;
+    background-color: #951a1d;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-container h3 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.header-container img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Стили для формы */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-container legend {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form-container label input[type="radio"] {
+    margin-right: 5px;
+}
+
+.form-container label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+.information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.information .image {
+    flex: 0 0 30%; /* Ширина изображения */
+    margin-right: 20px;
+}
+
+.information .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.information .text {
+    flex: 0 0 70%; /* Ширина текстового блока */
+}
+
+.information .text h4 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.information .text ul {
+    padding-left: 20px;
+}
+
+.information .text ul li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #555;
+}
+/* Стили для кнопки */
+.submit-button {
+    display: block;
+    width: 100%; /* Занимает всю ширину контейнера */
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.submit-button:hover {
+    background-color: #c9302c;
+}
+
+.info-button {
+    display: block;
+    width: 200px;
+    padding: 10px 20px;
+    margin: 20px 0;
+    text-align: center;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.info-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.info-button:hover {
+    background-color: darkred;
+}
+
+.slider-container {
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    margin: 20px auto;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+    min-width: 100%;
+    transition: 0.5s;
+    display: none; /* Скрываем все слайды */
+}
+
+.slide video,
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-container img {
+        max-width: 80px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container img {
+        max-width: 60px;
+    }
+}
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-container {
+
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-container img {
+        max-width: 80px;
+        margin-top: 10px;
+    }
+
+    .form-container {
+        margin-top: 200px;
+        padding: 15px;
+    }
+
+    .form-container input[type="text"] {
+        padding: 8px;
+    }
+
+    .form-container legend {
+        font-size: 16px;
+    }
+
+    .form-container label {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container img {
+        max-width: 60px;
+    }
+
+    .form-container {
+        margin-top: 200px;
+        padding: 10px;
+    }
+
+    .form-container input[type="text"] {
+        padding: 6px;
+    }
+
+    .form-container legend {
+        font-size: 14px;
+    }
+
+    .form-container label {
+        display: block;
+        margin-bottom: 10px;
+    }
+}

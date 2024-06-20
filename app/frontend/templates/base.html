@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{ url_for('static', path='css/style.css') }}" rel="stylesheet">
+    <title>ВНГ РФ</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h3>Росгвардия</h3>
+            <img src="{{ url_for('static', path='img/rosgvard_logo_white.png') }}" alt="">
+        </div>
+    </header>
+
+
+
+   {% block content %}
+    <div class="information">
+        <div class="image">
+            <img src="{{ url_for('static', path='img/231219142729.jpg') }}" alt="">
+        </div>
+        <div class="text">
+            <h4>Производится набор по контракту в/ч 3481<br> г. Северск (охрана ВГО)</h4><br>
+            <ul>
+                <li>Единовременная выплата 195 т.р</li>
+                <li>Зарплата от 55 т.р</li>
+                <li>Полный соцпакет и другие льготы</li>
+                <li>Военная ипотека</li>
+                <li>Бесплатный проезд к месту отдыха</li>
+                <li>Отпуск от 35 суток</li>
+                <li>Возможность командировки на СВО (по желанию)</li>
+            </ul>
+            <button class="info-button"><a href="http://127.0.0.1:9000/application">Узнать подробнее</a></button>
+        </div>
+
+    </div>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="https://www.rosguard.gov.ru/uploads/2021/07/szo4u7a0185.jpg" alt="Фото 1">
+            </div>
+            <div class="slide">
+                <img src="https://www.rosguard.gov.ru/uploads/2024/02/yuoa17a1647.jpg" alt="Фото 1">
+            </div>
+            <div class="slide">
+                <img src="https://www.rosguard.gov.ru/uploads/2021/07/szo4u7a0126.jpg" alt="Фото 2">
+            </div>
+        </div>
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    </div>
+    {% endblock %}
+
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
