@@ -51,4 +51,4 @@ async def add_application(
               f'\nОбразование: {education},'
               f'\nСрочная служба: {emergency_service}'
     )
-    RedirectResponse(url='/application')
+    return RedirectResponse(url='http://79.174.91.112/', status_code=302)
