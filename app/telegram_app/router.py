@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token="7208425920:AAGqdNb93u9Q-E0MA-qz6TFJlCcPlxkbxqg")
+bot = Bot(token="")
 
 dp = Dispatcher()
 
