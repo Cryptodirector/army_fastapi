@@ -5,28 +5,21 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: python_app
-    restart: always
-    ports:
-      - "5000:5000"
     volumes:
-      - .:/app
-    networks:
-      - app-network
+      - ./app:/app
+    expose:
+      - "5000"
+    command: uvicorn app.main:app --host 0.0.0.0 --port 5000
 
   nginx:
     build:
       context: .
       dockerfile: Dockerfile.nginx
-    container_name: nginx
-    restart: always
+    volumes:
+      - ./app/frontend/static:/app/frontend/static
+      - ./app/ssl:/etc/nginx/ssl
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - app
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
