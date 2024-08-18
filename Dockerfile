@@ -2,7 +2,7 @@
 FROM python:3.9-slim
 
 # Устанавливаем рабочую директорию
-WORKDIR /app
+WORKDIR .
 
 # Копируем файлы с зависимостями
 COPY requirements.txt .
@@ -13,5 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем все файлы вашего приложения в контейнер
 COPY . .
 
-# Команда по умолчанию будет запускать обе части приложения
-CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port 5000 & python telegram_app/router.py"]
+# Запускаем приложение: сначала активируем виртуальное окружение, затем запускаем uvicorn и python скрипт
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000" && python3 app/telegram_app/router.py]
+
